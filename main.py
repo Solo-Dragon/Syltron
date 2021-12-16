@@ -28,7 +28,7 @@ bot_token = os.environ.get("TOKEN")
 auth_chts = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
 banned_usrs = set(int(x) for x in os.environ.get("BANNED_USRS", "").split())
 client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
-app = Client(bot_token=bot_token)
+app = Client("bottt" , API_KEY , API_HASH , TOKEN)
 
 # --- BAN --- #
 @client.on(events.NewMessage(pattern="/ban"))
@@ -231,5 +231,11 @@ print("Arise")
 print("The Shadow are awaiting your orders")
 client.send_message(2079472115, "Here master")
 os.system("python -V")
-app.run()
-client.run_until_disconnected()
+
+def main () :
+  client.run_until_disconnected()
+  app.run()
+
+if __name__ == "__main__":
+  main()    
+    
