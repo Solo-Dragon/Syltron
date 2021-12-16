@@ -9,6 +9,7 @@ pymongo
 dnspython
 requests
 apscheduler
+TgCrypto
 bs4
 lxml
 geopy
