@@ -30,7 +30,13 @@ banned_usrs = set(int(x) for x in os.environ.get("BANNED_USRS", "").split())
 client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 app = Client("botto" , api_id , api_hash , bot_token)
 
-# --- BAN --- #
+#/start
+@app.on_message(filters.command(["start"]))
+async def start(_, message):
+    await message.reply_text(f"Hello {message.from_user.mention}, Ok bye now go sleep you've tested enough bots for today...")
+
+    
+    # --- BAN --- #
 @client.on(events.NewMessage(pattern="/ban"))
 async def banE(event):
     k = await event.get_reply_message()
