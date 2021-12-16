@@ -223,7 +223,7 @@ async def callback_query_welcome_button(_, callback_query):
     else:
         await callback_query.answer("This is not for you")
         
-sync def kick_restricted_after_delay(delay, button_message: Message):
+async def kick_restricted_after_delay(delay, button_message: Message):
     """If the new member is still restricted after the delay, delete
     button message and join message and then kick him
     """
