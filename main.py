@@ -28,7 +28,12 @@ bot_token = os.environ.get("TOKEN")
 auth_chts = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
 banned_usrs = set(int(x) for x in os.environ.get("BANNED_USRS", "").split())
 client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
-app = Client("botto" , api_id , api_hash , bot_token)
+app = Client(
+    'bot',
+    api_id=os.environ.get('APP_ID'),
+    api_hash=os.environ['API_HASH'],
+    bot_token=os.environ['TOKEN'])
+
 
 #/start
 @app.on_message(filters.command(["start"]))
